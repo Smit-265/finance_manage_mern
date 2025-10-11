@@ -1,0 +1,13 @@
+{
+    "name": "fintrack",
+    "private": true,
+    "workspaces": ["server", "client", "shared"],
+    "scripts": {
+      "dev": "concurrently \"npm run dev -w server\" \"npm run dev -w client\"",
+      "install:all": "npm install --workspaces"
+    },
+    "devDependencies": {
+      "concurrently": "^9.0.0"
+    }
+  }
+  
