@@ -3,6 +3,7 @@ import LoginPage from "../pages/auth/LoginPage";
 import DashboardPage from "../pages/dashboard/DashboardPage";
 import ProtectedRoute from "./ProtectedRoute";
 import { useAuth } from "../context/AuthContext";
+import MainLayout from "../layout/MainLayout";
 
 const RootRedirect = () => {
   const { user, token, loading } = useAuth();
@@ -28,15 +29,16 @@ const AppRoutes = () => {
         {/* Public route */}
         <Route path="/login" element={<LoginPage />} />
 
-        {/* Protected route */}
+        {/* Protected Layout */}
         <Route
-          path="/dashboard"
           element={
             <ProtectedRoute>
-              <DashboardPage />
+              <MainLayout />
             </ProtectedRoute>
           }
-        />
+        >
+          <Route path="/dashboard" element={<DashboardPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
