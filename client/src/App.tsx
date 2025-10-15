@@ -1,10 +1,12 @@
-import { Layout, Typography } from "antd";
+import React from "react";
+import AppRoutes from "./routes/AppRoutes";
+import { AuthProvider } from "./context/AuthContext";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <Layout style={{ height: "100vh", justifyContent: "center", alignItems: "center" }}>
-      <Typography.Title>FinTrack Client Running 🚀</Typography.Title>
-    </Layout>
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
   );
 }
 
