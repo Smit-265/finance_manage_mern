@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Menu } from "antd";
-import { DashboardOutlined, BarChartOutlined, SettingOutlined } from "@ant-design/icons";
+import { DashboardOutlined, BarChartOutlined, SettingOutlined, DollarOutlined } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const { Sider } = Layout;
@@ -11,6 +11,7 @@ const Sidebar: React.FC = () => {
 
   const items = [
     { key: "/dashboard", icon: <DashboardOutlined />, label: "Dashboard" },
+    { key: "/salary", icon: <DollarOutlined />, label: "Salary" },
     { key: "/reports", icon: <BarChartOutlined />, label: "Reports" },
     { key: "/settings", icon: <SettingOutlined />, label: "Settings" },
   ];

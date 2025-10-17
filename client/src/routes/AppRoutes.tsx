@@ -4,6 +4,7 @@ import DashboardPage from "../pages/dashboard/DashboardPage";
 import ProtectedRoute from "./ProtectedRoute";
 import { useAuth } from "../context/AuthContext";
 import MainLayout from "../layout/MainLayout";
+import SalaryPage from "../pages/salary/SalaryPage";
 
 const RootRedirect = () => {
   const { user, token, loading } = useAuth();
@@ -38,6 +39,7 @@ const AppRoutes = () => {
           }
         >
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/salary" element={<SalaryPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
