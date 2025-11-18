@@ -1,18 +1,17 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { errorHandler } from "./middlewares/errorMiddleware";
 import routes from "./routes";
 
 dotenv.config();
-const app = express();
 
+const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Root route
-app.get("/", (_req, res) => res.send("FinTrack API is running"));
-
-// All future routes
 app.use("/api", routes);
+
+app.use(errorHandler);
 
 export default app;
